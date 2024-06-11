@@ -1,6 +1,6 @@
 const profileService = require('../service/profile-service')
 const path = require('path');
-
+const sendMailService = require('../service/send-mail-service');
 class ProfileController{
     updateProfile = async (req, res, next) => {
         try {
@@ -40,6 +40,15 @@ class ProfileController{
             return res.json(technologiesList)
         }catch(e){
             next(e)
+        }
+    }
+    sendMail = async(req, res, next) => {
+        try{
+            const {from, to, subject, text } = req.body;
+            const mail = await sendMailService.SendMail(from, to, subject, text);
+            return res.json(mail);
+        }catch(e){
+            next(e);
         }
     }
 }

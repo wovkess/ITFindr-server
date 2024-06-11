@@ -33,6 +33,6 @@ router.post('/updateProfile',upload.single('photo'),uploadFileToFirebaseStorage,
 router.post('/getProfile', profileController.getProfile);
 router.get('/getAllProfiles', profileController.getAllProfiles);
 router.get('/getTechnologiesList', profileController.getTechnologiesList)
-
+router.post('/send-mail', profileController.sendMail)
 
 module.exports = router;
