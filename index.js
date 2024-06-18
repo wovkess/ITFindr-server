@@ -8,7 +8,7 @@ const errorMiddleware = require('./middlewares/error-middleware')
 const path = require('path')
 
 const PORT = process.env.PORT
-const baseURL = process.env.LOCAL_CLIENT_URL || process.env.GLOBAL_CLIENT_URL;
+const baseURL = process.env.GLOBAL_CLIENT_URL;
 const app = express();
 app.use(express.json())
 app.use(cookieParser())
