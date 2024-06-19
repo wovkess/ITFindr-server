@@ -43,7 +43,7 @@ class UserService{
             throw ApiError.BadRequests("Password don't compare")
         }
         const userDto = new UserDto(user);
-        const tokens = tokenService.generateToken({...userDto}); // уточнить принцип работы!
+        const tokens = tokenService.generateToken({...userDto});
 
         await tokenService.saveToken(userDto.id, tokens.refreshToken)
         return { ...tokens, user: userDto }

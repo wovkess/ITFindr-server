@@ -1,4 +1,3 @@
-const nodemailer = require('nodemailer');
 const nodeMailer = require('nodemailer')
 const userService = require('./user-service')
 
